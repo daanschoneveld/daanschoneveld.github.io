@@ -1,32 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <title>Document</title>
-</head>
-<body>
-    <header>
-        <div class="elipse"></div>
-        <div class="left-header">
-            <div class="header-text">
-                <h1>Wiskunde Hulp</h1>
-                <p>Krijg wiskunde hulp via Whatsapp</p>
-                <a href="#">Krijg hulp</a>
-            </div>
-        </div>
 
-        <div class="right-header">
-            <div class="header-img">
-                <img src="img/undraw_mathematics_4otb.svg" alt="person thinking">
+    <!-- Load MathQuill. -->
+    <link rel="stylesheet" href="mathquill/mathquill.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="mathquill/mathquill.js"></script>
+    <script>
+        var MQ = MathQuill.getInterface(2);
+    </script>
+
+    <style>
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .logo-wrapper {
+            height: 70px;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .logo-wrapper img {
+            height: 100%;
+            width: auto;
+        }
+
+        main {
+            margin: 0 auto;
+            width: 70%;
+            padding: 20px;
+        }
+
+        main h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title-wrapper {
+            padding: 10px;
+            margin-bottom: 30px;
+            border-bottom: 5px solid #FF9A27;
+        }
+
+        .title-wrapper h2 {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .label {
+            width: 100px;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 0;
+            padding: 5px;
+        }
+
+        .label-int {
+            background-color: lightblue;
+        }
+
+        .label-raak {
+            background-color: lightcoral;
+        }
+
+        .text-wrapper {
+            float: left;
+            width: 50%;
+        }
+
+        .score {
+            font-size: 14px;
+            transform: translate(-40px, 38px);
+        }
+
+        .graph-wrapper {
+            float: right;
+            width: 50%;
+        }
+
+        .graph-wrapper img {
+            width: 100%;
+        }
+
+        .ans-short-wrapper {
+            clear: both;
+            margin-bottom: 40px;
+        }
+
+        .ans-short-wrapper p,
+        .ans-long-wrapper p {
+            margin-left: 40px;
+        }
+
+        .text-clickable {
+            cursor: pointer;
+        }
+
+        .dropdown_toggle {
+            cursor: pointer;
+            float: left;
+            width: 40px;
+            height: auto;
+            transform: translateY(-6px);
+        }
+
+        .math-high {
+            transform: translateY(-4px);
+        }
+
+        .math-low {
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo-wrapper">
+            <img src="logo.svg">
+        </div>
+    </nav>
+
+    <main>
+        <h1>Eindexamen Wiskunde B - VWO 2021</h1>
+
+        <div class="ex-wrapper">
+            <div class="title-wrapper">
+                <h2>Parabool en twee lijnen</h2>
+                <a href="#" class="label label-int">Integreren</a>
+                <a href="#" class="label label-raak">Raaklijnen</a>
             </div>
-            <div class="elipse">
+
+            <div class="text-wrapper">
+                <p>
+                    De functie <span class="math">f</span> wordt gegeven door <span class="math math-high">f(x) = x -
+                        x^2</span>
+                    <br>
+                    Het punt <span class="math">T \left(\frac{1}{2},\frac{1}{4}\right)</span> is de top van de grafiek
+                    van
+                    <span class="math">f</span>.
+                    <br>
+                    De lijn <span class="math">l</span> is de raaklijn aan de grafiek van <span class="math">f</span> in
+                    de oorsprong.
+                    <br>
+                    De lijn <span class="math">m</span> staat loodrecht op de lijn <span class="math">l</span> en gaat
+                    door
+                    <span class="math">T</span>
+                    <br>
+                    <span class="math">V</span> is het vlakdeel dat wordt ingesloten door lijn <span
+                        class="math">m</span> en de grafiek
+                    van
+                    <span class="math">f</span>. <br>
+                    Zie de figuur hiernaast.
+                </p>
+
+                <p class="score">
+                    8p
+                </p>
+
+                <p>
+                    <strong>1.</strong> Bereken exact de oppervlakte van <span class="math">V</span>
+                </p>
+            </div>
+
+            <div class="graph-wrapper">
+                <img src="Grafiek.png">
+            </div>
+
+            <div class="ans-short-wrapper">
+                <img src="dropdown.svg" alt="dropdown_toggle" class="dropdown_toggle"
+                    onclick="showhide('ans-short-text', this)">
+                <h2>Kort antwoord</h2>
+                <p id="ans-short-text">
+                    <strong>(1)</strong> <span class="math">f'(x) = 1 - 2x</span>, dus <span class="math math-low">rc_l
+                        =
+                        f'(0) = 1</span>. <br>
+                    <strong>(1)</strong> (<span class="math math-low">rc_l \cdot rc_m = -1</span>, dus) <span
+                        class="math math-low">rc_m =
+                        -1</span>. <br>
+                    <strong>(1)</strong> <span class="math">\left(\frac{1}{2},\frac{1}{4}\right)</span> invullen in
+                    <span class="math">y = -x + b </span> geeft voor <span class="math">m</span> de vergelijking
+                    <span class="math">y = -x + \frac{3}{4}</span><br>
+                    <strong>(1)</strong> Uit <span class="math">-x + \frac{3}{4} = x - x^2</span> volgt <span
+                        class="math">x^2 - 2x + \frac{3}{4} = 0</span>.<br>
+                    <strong>(1)</strong> Exact oplossen geeft <span class="math">x = 1\frac{1}{2}</span> (<span
+                        class="math">x = \frac{1}{2}</span> geeft <span class="math">T</span>). <br>
+                    <strong>(1)</strong> De oppervlakte van <span class="math">V</span> is gelijk aan <span
+                        class="math">\int^{1\frac{1}{2}}_{\frac{1}{2}} \left(\left(x - x^2\right) - \left(-x +
+                        \frac{3}{4}\right)\right) dx </span>
+                    <br>
+                    <strong>(1)</strong> Een primitieve van <span class="math">-x^2 + 2x - \frac{3}{4}</span> is <span
+                        class="math">-\frac{1}{3}x^3 + x^2 -\frac{3}{4}x</span>.<br>
+                    <strong>(1)</strong> Invullen van de grenzen geeft: de oppervlakte van <span class="math">V</span>
+                    is
+                    <span class="math">\frac{1}{6}</span>.
+                </p>
+            </div>
+
+            <div class="ans-long-wrapper">
+                <img src="dropdown.svg" alt="dropdown_toggle" class="dropdown_toggle"
+                    onclick="showhide('ans-long-text', this)">
+                <h2 class="text-clickable" onclick="showhide('ans-long-text')">Uitgebreid antwoord</h2>
+                <p id="ans-long-text">
+                    In progress...
+                </p>
             </div>
         </div>
-    </header>
+    </main>
+
+    <script>
+        function showhide(string, button) {
+            var element = document.getElementById(string)
+
+            if (element.style.display === "none") {
+                element.style.display = "block"
+                button.style.transform = "rotate(90deg) translate(-6px, 6px)"
+
+            } else {
+                element.style.display = "none"
+                button.style.transform = "rotate(0deg) translateY(-6px)"
+            }
+        }
+
+
+        var math = document.getElementsByClassName('math');
+
+        for (var i = 0; i < math.length; i++) {
+            MQ.StaticMath(math[i]);
+        }
+
+        /* First you need to render the mathquill before setting the display to none. */
+        document.getElementById("ans-short-text").style.display = "none";
+        document.getElementById("ans-long-text").style.display = "none";
+
+    </script>
+
 </body>
+
 </html>
