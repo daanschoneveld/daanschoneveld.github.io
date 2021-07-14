@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiskunde B - 2021 VWO</title>
+
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/exam.css">
+
+    <!-- Load MathQuill. -->
+    <link rel="stylesheet" href="mathquill/mathquill.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="mathquill/mathquill.js"></script>
+    <script>
+        var MQ = MathQuill.getInterface(2);
+    </script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo-wrapper">
+            <img src="images/logo.svg">
+        </div>
+    </nav>
+
+    <main>
+        <h1>Eindexamen Wiskunde B - VWO 2021</h1>
+
+        <div class="ex-wrapper">
+            <div class="title-wrapper">
+                <h2>Parabool en twee lijnen</h2>
+            </div>
+
+            <div class="text-wrapper">
+                <p>
+                    De functie
+                    <span class="math">f</span>
+                    wordt gegeven door
+                    <span class="math math-high">f(x) = x - x^2</span>.
+                    <br>
+                    Het punt
+                    <span class="math">T \left(\frac{1}{2},\frac{1}{4}\right)</span>
+                    is de top van de grafiek van
+                    <span class="math">f</span>.
+                    <br>
+                    De lijn
+                    <span class="math">l</span>
+                    is de raaklijn aan de grafiek van
+                    <span class="math">f</span>
+                    in de oorsprong.
+                    <br>
+                    De lijn
+                    <span class="math">m</span>
+                    staat loodrecht op de lijn
+                    <span class="math">l</span>
+                    en gaat door
+                    <span class="math">T</span>.
+                    <br>
+                    <span class="math">V</span>
+                    is het vlakdeel dat wordt ingesloten door lijn
+                    <span class="math">m</span> en de grafiek
+                    van
+                    <span class="math">f</span>.
+                    <br>
+                    Zie de figuur.
+                </p>
+            </div>
+
+            <div class="graph-wrapper">
+                <img src="images/vwo2021-1.png">
+            </div>
+
+            <p class="score">
+                8p
+            </p>
+
+            <p>
+                <strong>1.</strong>
+                Bereken exact de oppervlakte van
+                <span class="math">V</span>.
+            </p>
+
+            <div class="ans-short-wrapper">
+                <img src="images/dropdown.svg" alt="dropdown_toggle" class="dropdown_toggle"
+                    onclick="showhide('ans-short-text', this)">
+                <h2>Kort antwoord</h2>
+                <p id="ans-short-text">
+                    <strong>(1p)</strong>
+                    <span class="math">f'(x) = 1 - 2x</span>
+                    , dus
+                    <span class="math math-low">rc_l = f'(0) = 1</span>.
+                    <br>
+                    <strong>(1p)</strong>
+                    (
+                    <span class="math math-low">rc_l \cdot rc_m = -1</span>
+                    , dus)
+                    <span class="math math-low">rc_m = -1</span>.
+                    <br>
+                    <strong>(1p)</strong>
+                    <span class="math">\left(\frac{1}{2},\frac{1}{4}\right)</span>
+                    invullen in
+                    <span class="math">y = -x + b </span>
+                    geeft voor
+                    <span class="math">m</span>
+                    de vergelijking
+                    <span class="math">y = -x + \frac{3}{4}</span>.
+                    <br>
+                    <strong>(1p)</strong>
+                    Uit
+                    <span class="math">-x + \frac{3}{4} = x - x^2</span>
+                    volgt
+                    <span class="math">x^2 - 2x + \frac{3}{4} = 0</span>.
+                    <br>
+                    <strong>(1p)</strong>
+                    Exact oplossen geeft
+                    <span class="math">x = 1\frac{1}{2}</span>
+                    (
+                    <span class="math">x = \frac{1}{2}</span>
+                    geeft
+                    <span class="math">T</span>
+                    ).
+                    <br>
+                    <strong>(1p)</strong>
+                    De oppervlakte van
+                    <span class="math">V</span>
+                    is gelijk aan
+                    <span class="math">\int^{1\frac{1}{2}}_{\frac{1}{2}} \left(\left(x - x^2\right) - \left(-x +
+                        \frac{3}{4}\right)\right) dx </span>.
+                    <br>
+                    <strong>(1p)</strong>
+                    Een primitieve van
+                    <span class="math">-x^2 + 2x - \frac{3}{4}</span>
+                    is
+                    <span class="math">-\frac{1}{3}x^3 + x^2 -\frac{3}{4}x</span>.
+                    <br>
+                    <strong>(1p)</strong>
+                    Invullen van de grenzen geeft: de oppervlakte van
+                    <span class="math">V</span>
+                    is
+                    <span class="math">\frac{1}{6}</span>.
+                </p>
+            </div>
+
+            <div class="ans-long-wrapper">
+                <img src="images/dropdown.svg" alt="dropdown_toggle" class="dropdown_toggle"
+                    onclick="showhide('ans-long-text', this)">
+                <h2 class="text-clickable" onclick="showhide('ans-long-text')">Uitgebreid antwoord</h2>
+                <p id="ans-long-text">
+                    In progress...
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function showhide(string, button) {
+            var element = document.getElementById(string)
+
+            if (element.style.display === "none") {
+                element.style.display = "block"
+                button.style.transform = "rotate(90deg) translate(-6px, 6px)"
+
+            } else {
+                element.style.display = "none"
+                button.style.transform = "rotate(0deg) translateY(-6px)"
+            }
+        }
+
+
+        var math = document.getElementsByClassName('math');
+
+        for (var i = 0; i < math.length; i++) {
+            MQ.StaticMath(math[i]);
+        }
+
+        /* First you need to render the mathquill before setting the display to none. */
+        document.getElementById("ans-short-text").style.display = "none";
+        document.getElementById("ans-long-text").style.display = "none";
+
+    </script>
+
+</body>
+
+</html>

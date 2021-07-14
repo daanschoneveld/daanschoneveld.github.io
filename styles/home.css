@@ -1,0 +1,68 @@
+nav {
+    height: var(--nav-height);
+    padding: var(--standard-padding);
+}
+
+.logo {
+    height: 100%;
+}
+
+.small-triangle {
+    position: absolute;
+    top: 0;
+    border-top: 50vh solid var(--dark-purple);
+    border-right: 20vw solid transparent;
+    z-index: -8;
+}
+
+.medium-triangle {
+    position: absolute;
+    top: 0;
+    border-top: 150vh solid var(--purple);
+    border-right: 60vw solid transparent;
+    z-index: -9;
+}
+
+.large-triangle {
+    position: absolute;
+    top: 0;
+    border-top: 200vh solid var(--light-purple);
+    border-right: 80vw solid transparent;
+    z-index: -10;
+}
+
+main {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+header, .step-wrapper {
+    height: calc(100vh - var(--nav-height));
+    display: grid;
+    align-items: center;
+    gap: 100px;
+}
+
+header {
+    grid-template-columns: 40% 60%;
+}
+
+.header-image, .step-image, .header-text, .step-text {
+    width: 100%;
+}
+
+.header-text {
+    color: white;
+}
+
+.header-text p {
+    margin-bottom: 20px;
+}
+
+.step-wrapper {
+    grid-template-columns: 60% 40%;
+}
+
+
+
+
