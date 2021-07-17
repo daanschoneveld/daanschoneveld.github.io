@@ -1,67 +1,81 @@
-nav {
-    height: var(--nav-height);
-    padding: var(--standard-padding);
+.triangle-top {
+    position: absolute;
+    top: calc(var(--header-height) - 10vw + 1px);
+    left: 40vw;
+    border-right: 10vw solid var(--light-purple);
+    border-top: 10vw solid transparent;
+    z-index: 100;
+}
+
+.triangle-bottom {
+    position: absolute;
+    top: var(--header-height);
+    left: 50vw;
+    border-top: 10vw solid var(--light-purple);
+    border-right: 10vw solid transparent;
+    z-index: 100;
+}
+
+.rect {
+    height: var(--header-height);
+    z-index: -1;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.translate-left {
+    transform: translateX(-100px);
+}
+
+.translate-right {
+    transform: translateX(100px);
+}
+
+.dark-rect {
+    width: 10vw;
+    background-color: var(--dark-purple);
+    display: grid;
 }
 
 .logo {
-    height: 100%;
+    max-width: 150px;
+    justify-self: center;
 }
 
-.small-triangle {
-    position: absolute;
-    top: 0;
-    border-top: 50vh solid var(--dark-purple);
-    border-right: 20vw solid transparent;
-    z-index: -8;
-}
-
-.medium-triangle {
-    position: absolute;
-    top: 0;
-    border-top: 150vh solid var(--purple);
-    border-right: 60vw solid transparent;
-    z-index: -9;
-}
-
-.large-triangle {
-    position: absolute;
-    top: 0;
-    border-top: 200vh solid var(--light-purple);
-    border-right: 80vw solid transparent;
-    z-index: -10;
-}
-
-main {
-    width: 80vw;
-    margin: 0 auto;
-}
-
-header, .step-wrapper {
-    height: calc(100vh - var(--nav-height));
+.normal-rect {
+    width: 40vw;
+    background-color: var(--purple);
     display: grid;
-    align-items: center;
-    gap: 100px;
+    place-items: center;
 }
 
-header {
-    grid-template-columns: 40% 60%;
-}
-
-.header-image, .step-image, .header-text, .step-text {
-    width: 100%;
-}
-
-.header-text {
+.text {
     color: white;
 }
 
-.header-text p {
-    margin-bottom: 20px;
+.light-rect {
+    width: 10vw;
+    background-color: var(--light-purple);
 }
 
-.step-wrapper {
-    grid-template-columns: 60% 40%;
+.image {
+    width: 40vw;
+    float: left;
+    display: grid;
+    place-items: center;
+    height: var(--header-height);
 }
+
+.image img{
+    width: 100%;
+}
+
 
 
 
