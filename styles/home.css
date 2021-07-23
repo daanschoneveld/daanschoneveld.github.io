@@ -178,22 +178,6 @@ h5 {
     background-color: var(--orange);
 }
 
-
-.top-footer {
-    width: 100%;
-    height: 100px;
-    background-color: var(--dark-purple);
-}
-
-.bottom-footer {
-    width: 100%;
-    height: 400px;
-    background-color: var(--orange);
-    display: grid;
-    place-items: center;
-    color: white;
-}
-
 /* Responsiveness */
 @media only screen and (max-width: 1450px) {
     .box {

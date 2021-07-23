@@ -3,16 +3,13 @@
  */
 
  body {
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color: var(--light-gray)
 }
 
 nav {
     padding: 5px;
     background-color: var(--dark-purple);
-}
-
-p {
-    font-size: 18px;
+    color: white;
 }
 
 .logo-wrapper {
@@ -24,66 +21,67 @@ p {
     width: auto;
 }
 
+p {
+    font-size: 16px;
+}
+
 main {
+    max-width: 900px;
     margin: 0 auto;
-    width: 60%;
-    padding: 20px;
 }
 
-main h1 {
-    text-align: center;
-    margin-bottom: 30px;
+.exec-info {
+    padding: 40px 40px 20px 40px;
+    border-bottom: 5px solid var(--orange);
 }
 
-.title-wrapper {
-    padding: 10px;
-    margin-bottom: 30px;
-    border-bottom: 5px solid #FF9A27;
+.exec-name {
+    color: var(--light-purple)
 }
 
-.text-wrapper {
-    float: left;
-    width: 50%;
-    margin-bottom: 30px;
+.type-text {
+    margin: 30px 40px 10px 40px;
 }
 
-.question {
-    transform: translateX(-50px);
+.box {
+    padding: 40px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 20px;
+    font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
 }
 
-.score {
-    margin-right: 20px;
+.title-wrapper h2 {
+    padding: 10px 40px;
 }
 
 .graph-wrapper {
-    float: right;
-    width: 50%;
+    width: 500px;
+    margin: 10px 0;
 }
 
-.graph-wrapper img {
-    width: 100%;
+.question::before {
+    content: "8p";
+    margin-right: 10px;
 }
 
-.ans-short-wrapper {
-    clear: both;
-    margin-bottom: 40px;
+.reference {
+    border-left: 5px solid var(--coral);
+    background-color: var(--light-coral);
+    padding: 5px;
+    margin: 10px 0;
 }
 
-.ans-short-wrapper p,
-.ans-long-wrapper p {
-    margin-left: 40px;
-}
-
-.text-clickable {
+.dropdown {
+    height: 20px;
+    width: auto;
     cursor: pointer;
+    transform: translateY(4px);
 }
 
-.dropdown_toggle {
-    cursor: pointer;
-    float: left;
-    width: 40px;
-    height: auto;
-    transform: translateY(-6px);
+.dropdown-data {
+    margin: 10px 0 10px 24px;
 }
 
 .math-high {
@@ -92,45 +90,4 @@ main h1 {
 
 .math-low {
     transform: translateY(4px);
-}
-
-/* Responsiveness */
-
-@media only screen and (max-width: 1700px) {
-    main {
-        width: 85%;
-    }
-}
-
-@media only screen and (max-width: 1400px) {
-    main {
-        width: 70%;
-    }
-
-    .text-wrapper, .graph-wrapper {
-        float: none;
-        width: 100%;
-    }
-
-    .graph-wrapper {
-        width: 70%;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .graph-wrapper {
-        width: 90%;
-    }
-}
-
-@media only screen and (max-width: 1100px) {
-    main {
-        width: 85%;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .score {
-        transform: translate(-30px, 38px);
-    }
 }
