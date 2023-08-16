@@ -1,0 +1,60 @@
+@import url("reset.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+:root {
+    --large-margin: 20px;
+    --plyr-audio-control-color: black;
+    --plyr-color-main: black;
+    --plyr-audio-control-background-hover: none;
+    --plyr-audio-control-color-hover: none;
+    --plyr-font-family: 'Lato', sans-serif;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+nav {
+    border-bottom: 3px solid black;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 900;
+}
+
+.fa-youtube {
+    background-color: rgba(255, 0, 0, 0.15);
+    padding: 5px;
+    border-radius: 100%;
+    color: red;
+}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: var(--large-margin);
+}
+
+h3 {
+    margin-top: var(--large-margin);
+}
+
+audio {
+    width: 100%;
+}
+
+p {
+    margin-bottom: var(--large-margin);
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--large-margin);
+}
