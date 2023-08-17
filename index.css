@@ -99,6 +99,10 @@ footer {
     background-color: white;
 }
 
+.lessons a {
+    font-weight: 400;
+}
+
 @media only screen and (max-width: 1000px) {
 
     .toc {
