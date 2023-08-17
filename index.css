@@ -17,6 +17,16 @@ body {
 
 nav {
     border-bottom: 3px solid black;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding-right: 300px;
+    z-index: 1;
+}
+
+main {
+    margin-top: 70px;
 }
 
 .nav {
@@ -57,4 +67,49 @@ p {
     max-width: 700px;
     margin: 0 auto;
     padding: var(--large-margin);
+}
+
+.toc {
+    position: fixed;
+    padding: var(--large-margin);
+    height: 100%;
+    top: 0;
+    overflow: scroll;
+    border-right: 3px solid black;
+    width: 300px;
+}
+
+.right-section {
+    margin-left: 300px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .toc {
+        display: none;
+    }
+
+    .right-section {
+        margin-left: 0;
+    }
+
+    nav {
+        padding-right: 0;
+    }
 }
